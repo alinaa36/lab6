@@ -3,15 +3,15 @@ home: true
 actionText: Розпочати →
 actionLink: /intro/
 
-footer: "ECL 2.0 Licensed | Copyright © [2024] [Skorobohatov Ihor]"
+footer: "ECL 2.0 Licensed | Copyright © [2024] [Kulish Alina]"
 ---
 
 
-**Виконав:**
+**Виконала:**
 
-*студент 2-го курсу, групи IO-25*
+*студентка 2-го курсу, групи IO-25*
 
-**Скоробогатов Ігор [igorskor0912@gmail.com, <a href="https://t.me/thundergodswrath" target="_blank">@thundergodswrath</a>]**
+**Куліш Аліна [alinakuils8@gmail.com, <a href="https://t.me/Hghhujh" target="_blank">@alinaa36</a>]**
 
 
 **Керівник**
