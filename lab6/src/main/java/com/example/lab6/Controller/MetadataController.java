@@ -32,7 +32,7 @@ public class MetadataController {
 
     @PutMapping("/{id}")
     public Metadata updateMetadata(@PathVariable Integer id, @RequestBody Metadata metadata) {
-        metadata.setMetadataId(id);
+        metadata.setMetadata_id(id);
         return metadataService.saveMetadata(metadata);
     }
 

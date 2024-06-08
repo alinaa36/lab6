@@ -10,33 +10,34 @@ import java.util.List;
 @Data
 @Builder
 @Entity
-@Table(name = "ObjectControl")
+@Table(name = "object_control") // змінено назву таблиці
 public class ObjectControl {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Getter
     @Setter
-    private int objectControlId;
+    @Column(name = "object_control_id") // змінено назву колонки
+    private int object_control_id;
 
     @Getter
     @Setter
-    private String objectType;
+    @Column(name = "object_type") // змінено назву колонки
+    private String object_type;
 
-    @Getter
-    @Setter
-    @OneToMany(mappedBy = "objectControl", cascade = CascadeType.ALL)
-    private List<Metadata> metadataList;
+    @OneToMany(mappedBy = "object_control", cascade = CascadeType.ALL)
+    private List<Metadata> metadata_list;
 
-    @Getter
-    @Setter
-    @OneToOne(mappedBy = "objectControl", cascade = CascadeType.ALL)
-    private DataPoints dataPoints;
+//    @Getter
+//    @Setter
+//    @OneToOne(mappedBy = "object_control", cascade = CascadeType.ALL)
+//    @Column(name = "data_points") // змінено назву колонки
+//    private DataPoints dataPoints;
+//
+//    @Getter
+//    @Setter
+//    @OneToOne(mappedBy = "object_control", cascade = CascadeType.ALL)
+//    @Column(name = "concept") // змінено назву колонки
+//    private Concept concept;
 
-    @Getter
-    @Setter
-    @OneToOne(mappedBy = "objectControl", cascade = CascadeType.ALL)
-    private Concept concept;
-
-    // Getters and setters
 }

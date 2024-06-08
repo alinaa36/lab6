@@ -3,6 +3,7 @@ package com.example.lab6.Controller;
 import com.example.lab6.Entity.Role;
 import com.example.lab6.Service.RoleService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -21,24 +22,27 @@ public class RoleController {
     }
 
     @GetMapping("/{id}")
-    public Optional<Role> getRoleById(@PathVariable Integer id) {
-        return roleService.getRoleById(id);
+    public ResponseEntity<Role> getRoleById(@PathVariable Integer id) {
+        Optional<Role> role = roleService.getRoleById(id);
+        return role.map(ResponseEntity::ok)
+                .orElseGet(() -> ResponseEntity.notFound().build());
     }
 
-    @PostMapping("/{id}")
+    @PostMapping
     public Role createRole(@RequestBody Role role) {
         return roleService.saveRole(role);
     }
 
     @PutMapping("/{id}")
-    public Role updateRole(@PathVariable Integer id, @RequestBody Role role) {
-        role.setRoleId(id);
-        return roleService.saveRole(role);
+    public ResponseEntity<Role> updateRole(@PathVariable Integer id, @RequestBody Role role) {
+        role.setRole_id(id);
+        Role updatedRole = roleService.saveRole(role);
+        return ResponseEntity.ok(updatedRole);
     }
 
     @DeleteMapping("/{id}")
-    public void deleteRole(@PathVariable Integer id) {
+    public ResponseEntity<Void> deleteRole(@PathVariable Integer id) {
         roleService.deleteRole(id);
+        return ResponseEntity.noContent().build();
     }
 }
-

@@ -12,9 +12,11 @@ public class Role {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Getter
     @Setter
-    private Integer roleId;
+    @Column(name = "role_id")  // Вказуємо правильне ім'я колонки
+    private Integer role_id;
 
     @Getter
     @Setter
-    private String roleType;
+    @Column(name = "role_type")  // Вказуємо правильне ім'я колонки
+    private String role_type;
 }

@@ -32,7 +32,7 @@ public class ObjectControlController {
 
     @PutMapping("/{id}")
     public ObjectControl updateObjectControl(@PathVariable Integer id, @RequestBody ObjectControl objectControl) {
-        objectControl.setObjectControlId(id);
+        objectControl.setObject_control_id(id);
         return objectControlService.saveObjectControl(objectControl);
     }
 

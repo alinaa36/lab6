@@ -5,26 +5,29 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Entity
-@Table(name = "Metadata")
+@Table(name = "metadata")
 public class Metadata {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Getter
     @Setter
-    private Integer metadataId;
+    @Column(name = "metadata_id")
+    private Integer metadata_id;
 
     @Getter
     @Setter
-    private String key;
+    @Column(name = "matadata_key")
+    private String matadata_key;
 
     @Getter
     @Setter
-    private String value;
+    @Column(name = "metadata_value")
+    private String matadata_value;
 
     @ManyToOne
-    @JoinColumn(name = "objectControlId", nullable = false)
+    @JoinColumn(name = "object_control_id", nullable = false)
     @Getter
     @Setter
-    private ObjectControl objectControl;
+    private ObjectControl object_control;
 }
