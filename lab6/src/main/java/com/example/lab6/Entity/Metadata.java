@@ -17,17 +17,17 @@ public class Metadata {
 
     @Getter
     @Setter
-    @Column(name = "matadata_key")
-    private String matadata_key;
+    @Column(name = "metadata_key")
+    private String metadata_key;
 
     @Getter
     @Setter
     @Column(name = "metadata_value")
-    private String matadata_value;
+    private String metadata_value;
 
-    @ManyToOne
-    @JoinColumn(name = "object_control_id", nullable = false)
     @Getter
     @Setter
+    @ManyToOne
+    @JoinColumn(name = "object_control_id", nullable = false)
     private ObjectControl object_control;
 }

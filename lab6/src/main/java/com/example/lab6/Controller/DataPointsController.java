@@ -32,7 +32,7 @@ public class DataPointsController {
 
     @PutMapping("/{id}")
     public DataPoints updateDataPoints(@PathVariable Integer id, @RequestBody DataPoints dataPoints) {
-        dataPoints.setDataPointsId(id);
+        dataPoints.setData_points_id(id);
         return dataPointsService.saveDataPoints(dataPoints);
     }
 

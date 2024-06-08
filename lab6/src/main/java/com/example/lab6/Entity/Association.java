@@ -15,19 +15,19 @@ public class Association {
     private Integer index;
 
     @ManyToOne
-    @JoinColumn(name = "dataPointsId", nullable = false)
+    @JoinColumn(name = "data_points_id", nullable = false)
     @Getter
     @Setter
-    private DataPoints dataPoints;
+    private DataPoints data_points;
 
     @ManyToOne
-    @JoinColumn(name = "conceptId", nullable = false)
+    @JoinColumn(name = "concept_id", nullable = false)
     @Getter
     @Setter
     private Concept concept;
 
     @ManyToOne
-    @JoinColumn(name = "roleId", nullable = false)
+    @JoinColumn(name = "role_id", nullable = false)
     @Getter
     @Setter
     private Role role;

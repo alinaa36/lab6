@@ -4,8 +4,6 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.Set;
-
 @Entity
 @Table(name = "Concept")
 public class Concept {
@@ -14,43 +12,41 @@ public class Concept {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Getter
     @Setter
-    private Integer conceptId;
+    private Integer concept_id;
 
     @Getter
     @Setter
-    private String conceptName;
+    @Column(name = "new_concept_name")
+    private String new_concept_name;
 
     @Getter
     @Setter
-    private String type;
+    @Column(name = "new_type")
+    private String new_type;
 
     @Getter
     @Setter
-    private String validator;
+    @Column(name = "new_validator")
+    private String new_validator;
 
     @Getter
     @Setter
-    private String tableName;
+    @Column(name = "new_table_name")
+    private String new_table_name;
 
     @Getter
     @Setter
-    private String filter;
+    @Column(name = "new_filter")
+    private String new_filter;
 
-    @ManyToOne
-    @JoinColumn(name = "conceptParentId")
-    @Getter
-    @Setter
-    private Concept conceptParent;
-
-    @OneToMany(mappedBy = "conceptParent", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @Getter
-    @Setter
-    private Set<Concept> subConcepts;
+//    @OneToMany(mappedBy = "concept_parent", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+//    @Getter
+//    @Setter
+//    private Set<Concept> subConcepts;
 
     @OneToOne
-    @MapsId
-    @JoinColumn(name = "conceptId")
+    @JoinColumn(name = "object_control_id",  nullable = false)
     @Getter
     @Setter
-    private ObjectControl objectControl;
+    private ObjectControl object_control;
 }

@@ -11,8 +11,17 @@ import java.util.Optional;
 @Service
 public class ObjectControlService {
 
+    private final ObjectControlRepository objectControlRepository;
+
     @Autowired
-    private ObjectControlRepository objectControlRepository;
+    public ObjectControlService(ObjectControlRepository objectControlRepository) {
+        this.objectControlRepository = objectControlRepository;
+    }
+
+    public ObjectControl getObjectControlById(int objectControlId) {
+        return objectControlRepository.findById(objectControlId)
+                .orElse(null); // Чи повертати null, якщо об'єкт не знайдено
+    }
 
     public List<ObjectControl> getAllObjectControls() {
         return objectControlRepository.findAll();

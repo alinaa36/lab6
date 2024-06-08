@@ -3,8 +3,6 @@ package com.example.lab6.Entity;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.util.List;
-
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
@@ -25,19 +23,16 @@ public class ObjectControl {
     @Column(name = "object_type") // змінено назву колонки
     private String object_type;
 
-    @OneToMany(mappedBy = "object_control", cascade = CascadeType.ALL)
-    private List<Metadata> metadata_list;
+//    @OneToMany(mappedBy = "object_control", cascade = CascadeType.ALL)
+//    private List<Metadata> metadata_list;
 
 //    @Getter
 //    @Setter
 //    @OneToOne(mappedBy = "object_control", cascade = CascadeType.ALL)
-//    @Column(name = "data_points") // змінено назву колонки
 //    private DataPoints dataPoints;
-//
+////
 //    @Getter
 //    @Setter
-//    @OneToOne(mappedBy = "object_control", cascade = CascadeType.ALL)
-//    @Column(name = "concept") // змінено назву колонки
-//    private Concept concept;
-
+//    @OneToMany(mappedBy = "object_control", cascade = CascadeType.ALL)
+//    private List<Concept> concept;
 }

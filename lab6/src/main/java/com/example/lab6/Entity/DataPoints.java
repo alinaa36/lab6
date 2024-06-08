@@ -5,25 +5,24 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Entity
-@Table(name = "DataPoints")
+@Table(name = "data_points")
 public class DataPoints {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Getter
     @Setter
-    private Integer dataPointsId;
+    private Integer data_points_id;
 
     @Column(unique = true)
     @Getter
     @Setter
-    private String tableName;
+    private String table_name;
 
     @OneToOne
-    @MapsId
-    @JoinColumn(name = "dataPointsId")
+    @JoinColumn(name = "object_control_id",  nullable = false)
     @Getter
     @Setter
-    private ObjectControl objectControl;
+    private ObjectControl object_control;
 }
 
